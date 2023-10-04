@@ -8,6 +8,7 @@ license = "MIT"
 repository = "https://github.com/foresterre/globwalker"
 categories = ["filesystem"]
 keywords = ["regex", "glob", "pattern", "walk", "iterator"]
+rust-version = "1.63"
 
 [dependencies]
 walkdir = "2"
