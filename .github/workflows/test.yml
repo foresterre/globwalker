@@ -24,9 +24,6 @@ jobs:
           - build: macos
             os: macOS-latest
 
-          - build: win-gnu
-            os: windows-latest
-
           - build: windows
             os: windows-latest
     steps:
