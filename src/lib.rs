@@ -1,4 +1,5 @@
 // Copyright (c) 2017 Gilad Naaman
+// Copyright (c) 2023 Martijn Gribnau, and GlobWalker [contributors](https://github.com/foresterre/globwalker/graphs/contributors)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -17,6 +18,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+#![doc = include_str!("../README.md")]
 //! Recursively find files in a directory using globs.
 //!
 //! Features include
@@ -32,7 +34,7 @@
 //! ## Finding image files in the current directory.
 //!
 //! ```rust
-//! extern crate globwalk;
+//! extern crate globwalker;
 //! # include!("doctests.rs");
 //!
 //! use std::fs;
@@ -40,7 +42,7 @@
 //! # let temp_dir = create_files(&["cow.jog", "cat.gif"])?;
 //! # ::std::env::set_current_dir(&temp_dir)?;
 //!
-//! for img in globwalk::glob("*.{png,jpg,gif}")? {
+//! for img in globwalker::glob("*.{png,jpg,gif}")? {
 //!     if let Ok(img) = img {
 //!         fs::remove_file(img.path())?;
 //!     }
@@ -51,20 +53,20 @@
 //!
 //! ## Advanced Globbing ###
 //!
-//! By using one of the constructors of `globwalk::GlobWalker`, it is possible to alter the
+//! By using one of the constructors of `globwalker::GlobWalker`, it is possible to alter the
 //! base-directory or add multiple patterns.
 //!
 //! ```rust
-//! extern crate globwalk;
+//! extern crate globwalker;
 //! # include!("doctests.rs");
 //!
 //! use std::fs;
 //!
 //! # fn run() -> Result<(), Box<::std::error::Error>> {
 //! # let temp_dir = create_files(&["cow.jog", "cat.gif"])?;
-//! # let BASE_DIR = &temp_dir;
-//! let walker = globwalk::GlobWalkerBuilder::from_patterns(
-//!         BASE_DIR,
+//! # let base_dir = &temp_dir;
+//! let walker = globwalker::GlobWalkerBuilder::from_patterns(
+//!         base_dir,
 //!         &["*.{png,jpg,gif}", "!Pictures/*"],
 //!     )
 //!     .max_depth(4)
