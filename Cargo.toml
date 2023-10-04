@@ -1,17 +1,13 @@
 [package]
-name = "globwalk"
-version = "0.8.1"
-description = "Glob-matched recursive file system walking."
-authors = ["Gilad Naaman <gilad@naaman.io>"]
+name = "globwalker"
+version = "0.9.0"
+description = "Glob-matched recursive file system walking. Fork of 'globwalk'"
+authors = ["Gilad Naaman <gilad@naaman.io>", "Martijn Gribnau <garm@ilumeo.com>"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/gilnaa/globwalk"
+repository = "https://github.com/foresterre/globwalker"
 categories = ["filesystem"]
 keywords = ["regex", "glob", "pattern", "walk", "iterator"]
-
-[badges]
-travis-ci = { repository = "Gilnaa/globwalk" }
-appveyor  = { repository = "Gilnaa/globwalk" }
 
 [dependencies]
 walkdir = "2"
