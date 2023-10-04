@@ -1,4 +1,5 @@
 // Copyright (c) 2018 Gilad Naaman
+// Copyright (c) 2023 Martijn Gribnau, and GlobWalker [contributors](https://github.com/foresterre/globwalker/graphs/contributors)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,10 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-extern crate globwalk;
+extern crate globwalker;
 
-use globwalk::GlobWalkerBuilder;
 use std::env::args;
+use globwalker::GlobWalkerBuilder;
 
 fn main() {
     let patterns = args().skip(1).collect::<Vec<_>>();
