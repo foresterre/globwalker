@@ -32,15 +32,15 @@ globwalker = "0.9.0"
 The following piece of code recursively find all `png`, `jpg`, or `gif` files:
 
 ```rust
-extern crate globwalk;
+extern crate globwalker;
 
 use std::fs;
 
 for img in globwalker::glob("*.{png,jpg,gif}").unwrap() {
     if let Ok(img) = img {
-        println!("{}", img.display());
+        println!("{:?}", img);
     }
 }
 ```
 
-See the [documentation](https://docs.rs/globwalk/) for more details.
+See the [documentation](https://docs.rs/globwalker/) for more details.
