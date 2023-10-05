@@ -133,11 +133,7 @@ impl std::fmt::Display for GlobError {
     }
 }
 
-impl std::error::Error for GlobError {
-    fn description(&self) -> &str {
-        self.0.description()
-    }
-}
+impl std::error::Error for GlobError {}
 
 bitflags::bitflags! {
     /// Possible file type filters.
@@ -145,6 +141,7 @@ bitflags::bitflags! {
     ///
     /// Note that not all files are represented in this enum.
     /// For example, a char-device is neither a file, a directory, nor a symlink.
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
     pub struct FileType: u32 {
         #[allow(missing_docs)] const FILE =    0b001;
         #[allow(missing_docs)] const DIR =     0b010;
